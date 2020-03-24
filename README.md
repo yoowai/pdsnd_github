@@ -1,15 +1,35 @@
 ### Date created
-Include the date you created this project and README file.
+This project was created on 11th March, 2020
 
 ### Project Title
-Replace the Project Title
+Uyai's Bikeshare Project for Udacity Course: Introduction to Programming with Python
 
 ### Description
-Describe what your project is about and what it does
+This was the second project in my Udacity class: Introduction to Programming with Python. In this project, we were given data provided by Motivate, a bike share system provider for many major cities in the United States, to uncover bike share usage patterns. We had to compare the system usage between three large cities: **Chicago**, **New York City**, and **Washington, DC** in the United States.
+
+Randomly selected data for the first six months of 2017 are provided for all three cities. All three of the data files contain the same core six (6) columns:
+
+Start Time
+End Time
+Trip Duration
+Start Station
+End Station
+User Type (Subscriber or Customer)
+
+The Chicago and New York City files also have data for gender and birth years.
+
+*If you select these cities, you will be able to get data by gender and birth year. This is unavailable for Washington*
 
 ### Files used
-Include the files used
+The files used are as follows:
+1. chicago.csv
+2. new_york_city.csv
+3. washington.csv
+
+*These files are available in my repo.*
+
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
-
+1. www.github.com
+2. www.udacity.com
+3. My Udacity Mentor (thanks dude!)
