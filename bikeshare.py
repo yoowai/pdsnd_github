@@ -15,24 +15,23 @@ def get_filters():
         (str) month - name of the month to filter by, or "all" to apply no month filter
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
-    print('Hello! Let\'s explore some US bikeshare data!')
-    
+
     # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
-   
+
     city = input('\nHello! Let\'s explore some US bikeshare data. You can choose from Chicago, New York City, or Washington: ').lower()
     while city not in ['chicago', 'new york city', 'washington']:
         city = input("Incorrect input - please choose from Chicago, New York City or Washington: ").lower()
 
     # TO DO: get user input for month (all, january, february, ... , june)
-    
+
     month = input("Please choose a month between January and June: ").lower()
-    while month not in ['january', 'february', 'march', 'april', 'may', 'june']:       
+    while month not in ['january', 'february', 'march', 'april', 'may', 'june']:
         month = input("Incorrect input - please choose a month between January and June: ").lower()
 
     # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
-    
+
     day = input("Please choose a day of the week: ").lower()
-    while day not in ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']:       
+    while day not in ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']:
        day = input("Incorrect input - please choose a day of the week between Sunday and Saturday: ").lower()
 
     print('-'*40)
@@ -50,9 +49,9 @@ def load_data(city, month, day):
     Returns:
         df - Pandas DataFrame containing city data filtered by month and day
     """
-    
+
     df = pd.read_csv("{}.csv".format(city.replace(" ","_")))
-    
+
     # This code will convert the Start and End Time columns to datetime
     df['Start Time'] = pd.to_datetime(df['Start Time'])
     df['End Time'] = pd.to_datetime(df['End Time'])
@@ -70,7 +69,7 @@ def load_data(city, month, day):
         # filter by month to create the new dataframe
         df = df.loc[df['month'] == month,:]
 
-    # filter by day 
+    # filter by day
     if day != 'all':
         df = df.loc[df['day_of_week'] == day,:]
 
@@ -97,7 +96,7 @@ def time_stats(df):
     df['start_hour'] = df['Start Time'].dt.hour
     print("Most common start hour: {}".format(
         str(df['start_hour'].mode().values[0]))
-    ) 
+    )
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -110,12 +109,12 @@ def station_stats(df):
     start_time = time.time()
 
     # TO DO: display most commonly used start station
-    print("Most common start station: {} ".format(
+    print("Most popular start station: {} ".format(
         df['Start Station'].mode().values[0])
     )
 
     # TO DO: display most commonly used end station
-    print("Most common end station: {}".format(
+    print("Most popular end station: {}".format(
         df['End Station'].mode().values[0])
     )
 
@@ -157,7 +156,7 @@ def user_stats(df, city):
     start_time = time.time()
 
     # TO DO: Display counts of user types
-    
+
     # Display counts of user types
     print("Here are the counts of various user types:")
     print(df['User Type'].value_counts())
@@ -167,7 +166,7 @@ def user_stats(df, city):
 
 
     # TO DO: Display earliest, most recent, and most common year of birth
-    
+
     if city != 'washington':
         # Display counts of gender
         print("Here are the counts of gender:")
@@ -184,11 +183,11 @@ def user_stats(df, city):
         print("Most common birth year: {}".format(
             str(int(df['Birth Year'].mode().values[0])))
         )
-    
+
     if city == 'washington':
         # No data
         print("No additional demographic information for Washington")
-        
+
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
