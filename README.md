@@ -9,12 +9,12 @@ This was the second project in my Udacity class: Introduction to Programming wit
 
 Randomly selected data for the first six months of 2017 are provided for all three cities. All three of the data files contain the same core six (6) columns:
 
-Start Time
-End Time
-Trip Duration
-Start Station
-End Station
-User Type (Subscriber or Customer)
+1. Start Time
+2. End Time
+3. Trip Duration
+4. Start Station
+5. End Station
+6. User Type (Subscriber or Customer)
 
 The Chicago and New York City files also have data for gender and birth years.
 
